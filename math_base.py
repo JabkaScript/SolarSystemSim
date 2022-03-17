@@ -1,11 +1,13 @@
 import math
 import main_screen
 import solar_system_stat
+import window_init
+import main_screen
 
 AU = 149.6e6 * 1000
 G = 6.67428e-11
-orbit_scale = 250 / AU #1 pix = AU
-planet_scale = 25/200000 #1 pix = 1000 km
+orbit_scale = 5.681818181818182e-09
+planet_scale = 250000  # 1000 km to 1 pixel
 timestep = 3600  # 1 sec = 1 day
 
 
@@ -21,46 +23,50 @@ def calculate_attraction(object1, object2):
     return force_x, force_y
 
 
-def calculate_next_position(current_object, OBJECT_ARRAY):
+def calculate_next_position(current_object):
     if current_object == solar_system_stat.Sun: return
     total_fx = total_fy = 0
-    for space_object in OBJECT_ARRAY:
+    for space_object in main_screen.OBJECT_ARRAY:
+        if current_object == space_object: continue
+        fx, fy = calculate_attraction(current_object, space_object)
+        total_fx += fx
+        total_fy += fy
+    """fx, fy = calculate_attraction(current_object, another_object)
+    total_fx += fx
+    total_fy += fy"""
+    current_object.x_velocity += total_fx / current_object.mass * timestep
+    current_object.y_velocity += total_fy / current_object.mass * timestep
+    current_object.x += current_object.x_velocity * timestep
+    current_object.y += current_object.y_velocity * timestep
+    current_object.orbit.append((current_object.x, current_object.y))
+
+
+def calculate_next_position_for_satellite(current_object, parent):
+    total_fx = total_fy = 0
+    for space_object in main_screen.OBJECT_ARRAY:
         if current_object == space_object: continue
         fx, fy = calculate_attraction(current_object, space_object)
         total_fx += fx
         total_fy += fy
     current_object.x_velocity += total_fx / current_object.mass * timestep
     current_object.y_velocity += total_fy / current_object.mass * timestep
-
     current_object.x += current_object.x_velocity * timestep
     current_object.y += current_object.y_velocity * timestep
-    if (current_object.x, current_object.y) not in current_object.orbit:
-        current_object.orbit.append((current_object.x, current_object.y))
+    distance_x = parent.x - current_object.x
+    distance_y = parent.y - current_object.y
+    current_object.x += distance_x
+    current_object.y += distance_y
+    current_object.orbit.append((current_object.x, current_object.y))
 
 
-
-def clear_orbits(OBJECT_ARRAY):
-    for object in OBJECT_ARRAY:
+def clear_orbits():
+    for object in main_screen.OBJECT_ARRAY:
         object.orbit = []
 
 
 def calculate_next_position_for_satellites(current_object):
     for satellite in current_object.satellite_array:
         calculate_next_position_for_satellite(satellite, current_object)
-
-
-def calculate_next_position_for_satellite(current_object, parent):
-    total_fx = total_fy = 0
-    fx, fy = calculate_attraction(current_object, parent)
-    total_fx += fx
-    total_fy += fy
-    current_object.x_velocity += total_fx / current_object.mass * timestep
-    current_object.y_velocity += total_fy / current_object.mass * timestep
-
-    current_object.x += current_object.x_velocity * timestep
-    current_object.y += current_object.y_velocity * timestep
-
-    current_object.orbit.append((current_object.x, current_object.y))
 
 
 def increase_timestep():
@@ -75,21 +81,15 @@ def decrease_timestep():
 
 def increase_scale():
     global orbit_scale
-    if orbit_scale<9.024064171122997e-09:
+    if orbit_scale < 5.681818181818182e-09:
         orbit_scale += 100 / AU
         global planet_scale
-        planet_scale += 1/10000
-        for object in main_screen.OBJECT_ARRAY:
-            object.radius = object.original_radius*planet_scale
+        planet_scale -= 50000
 
 
 def decrease_scale():
     global orbit_scale
-    if orbit_scale - 100 / AU > 8.02139037433155e-09:
+    if orbit_scale - 100 / AU > 1.002673796791444e-09:
         orbit_scale -= 100 / AU
-    print(orbit_scale)
-    global planet_scale
-    if planet_scale>0.0002:
-        planet_scale -= 1 / 10000
-        for object in main_screen.OBJECT_ARRAY:
-            object.radius = object.original_radius*planet_scale
+        global planet_scale
+        planet_scale += 50000
