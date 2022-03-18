@@ -1,11 +1,9 @@
 from solar_system_stat import *
 import window_init
 import math_base
-
-
+import user_interface
 
 OBJECT_ARRAY = [Sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune]
-
 
 # TODO("MOON PLS MY FRIEND, MOON")
 
@@ -20,7 +18,6 @@ def draw_main_objects():
         object.draw_orbit(window_init.WIN)
         object.draw(window_init.WIN)
         object.draw_satellites(window_init.WIN)
-    pygame.display.update()
 
 
 def define_main_objects_images():
@@ -34,27 +31,27 @@ def define_main_objects_images():
     Uranus.image = pygame.image.load("planets/uranus.png")
     Neptune.image = pygame.image.load("planets/neptune.png")
 
-    #Moon.image = pygame.image.load("planets/mercury.png")
+    # Moon.image = pygame.image.load("planets/mercury.png")
 
 
 def set_planet_scale():
     Sun.drawable_image = pygame.transform.scale(Sun.image, (Sun.radius // math_base.planet_scale,
-                                                   Sun.radius // math_base.planet_scale))
+                                                            Sun.radius // math_base.planet_scale))
     Mercury.drawable_image = pygame.transform.scale(Mercury.image, (Mercury.radius // math_base.planet_scale,
-                                                           Mercury.radius // math_base.planet_scale))
+                                                                    Mercury.radius // math_base.planet_scale))
     Venus.drawable_image = pygame.transform.scale(Venus.image, (Venus.radius // math_base.planet_scale,
-                                                       Venus.radius // math_base.planet_scale))
+                                                                Venus.radius // math_base.planet_scale))
     Earth.drawable_image = pygame.transform.scale(Earth.image, (Earth.radius // math_base.planet_scale,
-                                                       Earth.radius // math_base.planet_scale))
+                                                                Earth.radius // math_base.planet_scale))
     Mars.drawable_image = pygame.transform.scale(Mars.image, (Mars.radius // math_base.planet_scale,
-                                                     Mars.radius // math_base.planet_scale))
+                                                              Mars.radius // math_base.planet_scale))
     Jupiter.drawable_image = pygame.transform.scale(Jupiter.image, (Jupiter.radius // math_base.planet_scale,
-                                                           Jupiter.radius // math_base.planet_scale))
+                                                                    Jupiter.radius // math_base.planet_scale))
     Saturn.drawable_image = pygame.transform.scale(Saturn.image, (Saturn.radius // math_base.planet_scale,
-                                                         Saturn.radius // math_base.planet_scale))
+                                                                  Saturn.radius // math_base.planet_scale))
     Uranus.drawable_image = pygame.transform.scale(Uranus.image, (Uranus.radius // math_base.planet_scale,
-                                                         Uranus.radius // math_base.planet_scale))
+                                                                  Uranus.radius // math_base.planet_scale))
     Neptune.drawable_image = pygame.transform.scale(Neptune.image, (Neptune.radius // math_base.planet_scale,
-                                                           Neptune.radius // math_base.planet_scale))
-    #Moon.drawable_image = pygame.transform.scale(Moon.image, (Moon.radius // math_base.planet_scale,
-                                                                    #Moon.radius // math_base.planet_scale))
+                                                                    Neptune.radius // math_base.planet_scale))
+    # Moon.drawable_image = pygame.transform.scale(Moon.image, (Moon.radius // math_base.planet_scale,
+    # Moon.radius // math_base.planet_scale))

@@ -2,7 +2,7 @@ import pygame
 import main_screen
 import math_base
 from pygame.locals import *
-import solar_system_stat
+
 import user_interface
 
 pygame.init()
@@ -11,13 +11,14 @@ HEIGHT = 1080
 
 SCALED = True
 
-nameFont = pygame.font.SysFont("Comic Sans MS", 30)
+nameFont = pygame.font.SysFont("Comic Sans MS", 25)
 
 user_location_x = 0
 user_location_y = 0
-
+something_clicked = False
 WIN = pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN, vsync=1)
 pygame.display.set_caption("ABOBA")
+usr_int = user_interface.UserInterface(WIN)
 
 
 def start_program():
@@ -26,17 +27,16 @@ def start_program():
     global user_location_y
     loop = True
     clock = pygame.time.Clock()
-    i = 0
     planet_counter = 1
     orbit_in_way = False
+    usr_int.button_init()
     main_screen.define_main_objects_images()
     main_screen.set_planet_scale()
-    usr_int = user_interface.UserInterface()
     while loop:
         clock.tick(60)
         WIN.fill((0, 0, 0))
         main_screen.draw_main_objects()
-        usr_int.draw_background()
+        draw_UI()
         for event in pygame.event.get():
             match event.type:
                 case pygame.QUIT:
@@ -92,3 +92,9 @@ def start_program():
                 user_location_x = (x * math_base.orbit_scale) / -1
                 user_location_y = (y * math_base.orbit_scale) / -1
     pygame.quit()
+
+
+def draw_UI():
+    usr_int.draw_background()
+    usr_int.draw_buttons()
+    pygame.display.update()

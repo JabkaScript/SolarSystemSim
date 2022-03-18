@@ -1,7 +1,5 @@
 import math
-import main_screen
 import solar_system_stat
-import window_init
 import main_screen
 
 AU = 149.6e6 * 1000

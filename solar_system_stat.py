@@ -16,10 +16,10 @@ Earth.y_velocity = -29.78 * 1000
 Mars = SpaceObject("Mars", 1.52 * math_base.AU, 0, "red", 6.42 * 10 ** 23, 3389000, "planet")
 Mars.y_velocity = -24.13 * 1000
 
-Jupiter = SpaceObject("Jupiter", 5.204 * math_base.AU, 0, (180, 134, 128), 1.8986 * 10 ** 27, 6991100, "planet")
+Jupiter = SpaceObject("Jupiter", 5.204 * math_base.AU, 0, (180, 134, 128), 1.8986 * 10 ** 27, 69911000, "planet")
 Jupiter.y_velocity = -13.07 * 1000
 
-Saturn = SpaceObject("Saturn", 9.54 * math_base.AU, 0, (230, 212, 176), 5.68 * 10 ** 26, 5823200, "planet")
+Saturn = SpaceObject("Saturn", 9.54 * math_base.AU, 0, (230, 212, 176), 5.68 * 10 ** 26, 58232000, "planet")
 Saturn.y_velocity = -9.68 * 1000
 
 Uranus = SpaceObject("Uranus", 19.2 * math_base.AU, 0, (191, 255, 255), 8.68 * 10 ** 25, 25362000, "planet")
