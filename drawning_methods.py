@@ -1,20 +1,21 @@
 from solar_system_stat import *
 import window_init
 import math_base
-import user_interface
-import math
+import events_handler
 
 
 def draw_focus(object):
     if not window_init.SCALED:
         set_planet_scale()
+        math_base.clear_scaled_orbits(object)
         window_init.SCALED = True
-    if window_init.orbit_needed: object.draw_orbit(window_init.WIN)
+    object.draw_orbit(window_init.WIN)
     object.draw(window_init.WIN)
 
 
 def draw_satellites(focus_object):
-    math_base.calculate_next_position_for_satellites(focus_object)
+    for i in range(abs(math_base.timestep_tick)):
+        math_base.calculate_next_position_for_satellites(focus_object)
     focus_object.draw_satellites(window_init.WIN)
 
 
@@ -30,7 +31,6 @@ def define_main_objects_images():
     Neptune.image = pygame.image.load("planets/neptune.png")
 
     Moon.image = pygame.image.load("planets/mercury.png")
-    Phobos.image = pygame.image.load("planets/mercury.png")
 
 
 def set_planet_scale():
@@ -54,8 +54,6 @@ def set_planet_scale():
                                                                     Neptune.radius // math_base.planet_scale))
     Moon.drawable_image = pygame.transform.scale(Moon.image, (Moon.radius // math_base.planet_scale,
                                                               Moon.radius // math_base.planet_scale))
-    Phobos.drawable_image = pygame.transform.scale(Phobos.image, (Phobos.radius // math_base.planet_scale,
-                                                                  Phobos.radius // math_base.planet_scale))
 
 
 def draw_UI(UI):

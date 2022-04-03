@@ -40,20 +40,17 @@ Saturn.real_image = "planets/saturn_R.jpg"
 Uranus = SpaceObject("Уран", 19.2 * math_base.AU, 0, (191, 255, 255), 8.68 * 10 ** 25, 25362000, "Планета")
 Uranus.y_velocity = -6.81 * 1000
 Uranus.info = solar_system_object_information_ru.uranus_info
+Uranus.real_image = "planets/uranus_R.jpg"
 
 Neptune = SpaceObject("Нептун", 30.1*math_base.AU, 0, (75, 112, 221), 1.02*10**26, 24662000, "Планета")
 Neptune.y_velocity = -5.4349*1000
 Neptune.info = solar_system_object_information_ru.neptune_info
+Neptune.real_image = "planets/neptune_R.jpg"
 
 Moon = SpaceObject("Луна", 384467*1000, 0, "gray", 7.35 * 10 ** 22, 1737000, "Спутник")
 Moon.y_velocity = -1.02*1000
 Moon.original_y_velocity = -1.02*1000
 Earth.satellite_array.append(Moon)
-
-Phobos = SpaceObject("Фобос", 94000*1000, 0, "gray", 1.072*16, 1100000, "Спутник")
-Phobos.y_velocity = -1.02*1000
-Phobos.original_y_velocity = -1.02*1000
-Mars.satellite_array.append(Phobos)
 
 Sun.satellite_array = [Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune]
 OBJECT_ARRAY = [Sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune]

@@ -18,6 +18,7 @@ class SpaceObject:
         self.color = color
         self.satellite_array = []
         self.orbit = []
+        self.orbit_needed = True
         self.scaled_orbit = []
         self.x_velocity = 0
         self.y_velocity = 0
@@ -36,11 +37,12 @@ class SpaceObject:
         win.blit(planet_name, (rect.centerx - 50, rect.centery))
 
     def draw_orbit(self, win):
-        scaled_orbit = []
+        scaled_orbit = self.scaled_orbit
         orbit = self.orbit
+        starting_index = len(orbit)-(len(orbit)-len(scaled_orbit))
         if len(orbit) > 2:
-            for point in orbit:
-                x, y = point
+            for index in range(starting_index, len(orbit)):
+                x, y = orbit[index]
                 x = x * math_base.orbit_scale + window_init.WIDTH / 2 + window_init.user_location_x
                 y = y * math_base.orbit_scale + window_init.HEIGHT / 2 + window_init.user_location_y
                 scaled_orbit.append((x, y))
@@ -53,6 +55,6 @@ class SpaceObject:
             rect = satellite.drawable_image.get_rect()
             rect.center = (x, y)
             planet_name = window_init.nameFont.render(satellite.name, False, (255, 255, 255))
-            if window_init.orbit_needed: satellite.draw_orbit(win)
+            satellite.draw_orbit(win)
             win.blit(satellite.drawable_image, rect)
             win.blit(planet_name, (rect.centerx - 50, rect.centery))

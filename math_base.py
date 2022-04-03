@@ -1,12 +1,12 @@
 import math
 from solar_system_stat import *
-import drawning_methods
 
 AU = 149.6e6 * 1000
 G = 6.67428e-11
 orbit_scale = 5.681818181818182e-09
 planet_scale = 250000  # 1000 km to 1 pixel
 timestep = 3600  # 1 sec = 1 day
+timestep_tick = 1  # 1 tick = 1 calculation. (see draw_satellites func) HIGH-END PC required XD
 
 
 def calculate_attraction(object1, object2):
@@ -19,21 +19,6 @@ def calculate_attraction(object1, object2):
     force_x = math.cos(angle) * force
     force_y = math.sin(angle) * force
     return force_x, force_y
-
-
-def calculate_next_position(current_object):
-    if current_object == Sun: return
-    total_fx = total_fy = 0
-    for space_object in OBJECT_ARRAY:
-        if current_object == space_object: continue
-        fx, fy = calculate_attraction(current_object, space_object)
-        total_fx += fx
-        total_fy += fy
-    current_object.x_velocity += total_fx / current_object.mass * timestep
-    current_object.y_velocity += total_fy / current_object.mass * timestep
-    current_object.x += current_object.x_velocity * timestep
-    current_object.y += current_object.y_velocity * timestep
-    current_object.orbit.append((current_object.x, current_object.y))
 
 
 def calculate_next_position_by_date(current_object, day_number):
@@ -59,10 +44,10 @@ def calculate_next_position_for_satellite(satellite, focus_object):
         fx, fy = calculate_attraction(space_object, satellite)
         total_fx += fx
         total_fy += fy
-    satellite.x_velocity += total_fx / satellite.mass * timestep
-    satellite.y_velocity += total_fy / satellite.mass * timestep
-    satellite.x += satellite.x_velocity * timestep
-    satellite.y += satellite.y_velocity * timestep
+    satellite.x_velocity += total_fx / satellite.mass * timestep * sign(timestep_tick)
+    satellite.y_velocity += total_fy / satellite.mass * timestep * sign(timestep_tick)
+    satellite.x += satellite.x_velocity * timestep * sign(timestep_tick)
+    satellite.y += satellite.y_velocity * timestep * sign(timestep_tick)
     satellite.orbit.append((satellite.x, satellite.y))
 
 
@@ -71,19 +56,24 @@ def clear_orbits(focus_object):
         object.orbit = []
 
 
+def clear_scaled_orbits(object):
+    for satellite in object.satellite_array:
+        satellite.scaled_orbit = []
+
+
 def calculate_next_position_for_satellites(current_object):
     for satellite in current_object.satellite_array:
         calculate_next_position_for_satellite(satellite, current_object)
 
 
-def increase_timestep():
-    global timestep
-    timestep += 3600
+def increase_timestep_tick():
+    global timestep_tick
+    timestep_tick += 1
 
 
-def decrease_timestep():
-    global timestep
-    timestep -= 3600
+def decrease_timestep_tick():
+    global timestep_tick
+    timestep_tick -= 1
 
 
 def increase_scale():
@@ -115,3 +105,7 @@ def move_satellites_to_parent(focus_object):
         satellite.y = focus_object.y
         satellite.x_velocity = 0
         satellite.y_velocity = satellite.original_y_velocity
+
+
+def sign(number):
+    return 0 if number == 0 else 1 if number > 0 else -1
