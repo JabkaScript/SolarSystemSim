@@ -4,16 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="734f22eb-bbe1-482e-96ff-24f23a0b97b1" name="Changes" comment="2">
+    <list default="true" id="734f22eb-bbe1-482e-96ff-24f23a0b97b1" name="Changes" comment="Пофиксил орбиты + вынес обработчик событий в отдельный файлик.&#10;Теперь главная проблема - интерфейс и лаги, да, лаги это страшно.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/button.py" beforeDir="false" afterPath="$PROJECT_DIR$/button.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculated_orbits.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_themes.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_themes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buttons/info_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/buttons/info_button.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drawning_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/drawning_methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/events_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/math_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/math_base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/planet_field.py" beforeDir="false" afterPath="$PROJECT_DIR$/planet_field.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/planet_info_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/planet_info_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planets_information/sun.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/planet_scale.py" beforeDir="false" afterPath="$PROJECT_DIR$/planet_scale.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/planets/earth.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/earth.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/planets/jupiter.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/jupiter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/planets/mars.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/mars.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/planets/mars_R.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/planets/mars_R.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/planets/mercury.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/mercury.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/planets/neptune.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/neptune.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/planets/saturn.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/saturn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/planets/sun.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/sun.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/planets/uranus.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/uranus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/planets/venus.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/venus.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solar_system_object_information_ru.py" beforeDir="false" afterPath="$PROJECT_DIR$/solar_system_object_information_ru.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solar_system_stat.py" beforeDir="false" afterPath="$PROJECT_DIR$/solar_system_stat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/space_objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/space_objects.py" afterDir="false" />
@@ -111,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648652030220</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Пофиксил орбиты + вынес обработчик событий в отдельный файлик.&#10;Теперь главная проблема - интерфейс и лаги, да, лаги это страшно.">
+      <created>1649003801316</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649003801316</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +145,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
     <MESSAGE value="2" />
-    <option name="LAST_COMMIT_MESSAGE" value="2" />
+    <MESSAGE value="Пофиксил орбиты + вынес обработчик событий в отдельный файлик.&#10;Теперь главная проблема - интерфейс и лаги, да, лаги это страшно." />
+    <option name="LAST_COMMIT_MESSAGE" value="Пофиксил орбиты + вынес обработчик событий в отдельный файлик.&#10;Теперь главная проблема - интерфейс и лаги, да, лаги это страшно." />
   </component>
 </project>

@@ -1,11 +1,12 @@
 import math
-from solar_system_stat import *
 
-AU = 149.6e6 * 1000
+import window_init
+
+AU = 149597870 * 1000
 G = 6.67428e-11
-orbit_scale = 5.681818181818182e-09
-planet_scale = 250000  # 1000 km to 1 pixel
-timestep = 3600  # 1 sec = 1 day
+orbit_scale = 0.000000006 #5.681818181818182e-09
+planet_scale = 150000  # 1000 km to 1 pixel
+timestep = 1200 # 1 sec = 1 day
 timestep_tick = 1  # 1 tick = 1 calculation. (see draw_satellites func) HIGH-END PC required XD
 
 
@@ -21,22 +22,6 @@ def calculate_attraction(object1, object2):
     return force_x, force_y
 
 
-def calculate_next_position_by_date(current_object, day_number):
-    if current_object == Sun: return
-    total_fx = total_fy = 0
-    print(day_number)
-    for space_object in OBJECT_ARRAY:
-        if current_object == space_object: continue
-        fx, fy = calculate_attraction(current_object, space_object)
-        total_fx += fx
-        total_fy += fy
-    current_object.x_velocity += total_fx / current_object.mass * day_number
-    current_object.y_velocity += total_fy / current_object.mass * day_number
-    current_object.x += current_object.x_velocity * day_number
-    current_object.y += current_object.y_velocity * day_number
-    current_object.orbit.append((current_object.x, current_object.y))
-
-
 def calculate_next_position_for_satellite(satellite, focus_object):
     total_fx, total_fy = calculate_attraction(satellite, focus_object)
     for space_object in focus_object.satellite_array:
@@ -48,7 +33,6 @@ def calculate_next_position_for_satellite(satellite, focus_object):
     satellite.y_velocity += total_fy / satellite.mass * timestep * sign(timestep_tick)
     satellite.x += satellite.x_velocity * timestep * sign(timestep_tick)
     satellite.y += satellite.y_velocity * timestep * sign(timestep_tick)
-    satellite.orbit.append((satellite.x, satellite.y))
 
 
 def clear_orbits(focus_object):
@@ -78,17 +62,17 @@ def decrease_timestep_tick():
 
 def increase_scale():
     global orbit_scale
+    global planet_scale
     if orbit_scale < 5.681818181818182e-09:
         orbit_scale += 100 / AU
-        global planet_scale
         planet_scale -= 50000
 
 
 def decrease_scale():
     global orbit_scale
+    global planet_scale
     if orbit_scale - 100 / AU > 1.002673796791444e-09:
         orbit_scale -= 100 / AU
-        global planet_scale
         planet_scale += 50000
 
 
