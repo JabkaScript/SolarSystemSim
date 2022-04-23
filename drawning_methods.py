@@ -28,8 +28,16 @@ def define_main_objects_images():
     Saturn.image = pygame.image.load("planets/saturn.png")
     Uranus.image = pygame.image.load("planets/uranus.png")
     Neptune.image = pygame.image.load("planets/neptune.png")
+
     Moon.image = pygame.image.load("satellites/moon.png")
-    Phobos.image = pygame.image.load("satellites/moon.png")
+
+    Phobos.image = pygame.image.load("satellites/phobos.png")
+    Deimos.image = pygame.image.load("satellites/deimos.png")
+
+    Io.image = pygame.image.load("satellites/io.png")
+    Europe.image = pygame.image.load("satellites/europe.png")
+
+    Titan.image = pygame.image.load("satellites/europe.png")
 
 
 def set_planet_scale():
@@ -54,9 +62,18 @@ def set_planet_scale():
     Moon.drawable_image = pygame.transform.scale(Moon.image, (Moon.radius // math_base.planet_scale,
                                                               Moon.radius // math_base.planet_scale))
     Phobos.drawable_image = pygame.transform.scale(Phobos.image, (Phobos.radius // math_base.planet_scale,
-                                                              Phobos.radius // math_base.planet_scale))
+                                                                  Phobos.radius // math_base.planet_scale))
+    Deimos.drawable_image = pygame.transform.scale(Deimos.image, (Deimos.radius // math_base.planet_scale,
+                                                                  Deimos.radius // math_base.planet_scale))
+    Io.drawable_image = pygame.transform.scale(Io.image, (Io.radius // math_base.planet_scale,
+                                                              Io.radius // math_base.planet_scale))
+    Europe.drawable_image = pygame.transform.scale(Europe.image, (Europe.radius // math_base.planet_scale,
+                                                          Europe.radius // math_base.planet_scale))
+    Titan.drawable_image = pygame.transform.scale(Titan.image, (Titan.radius // math_base.planet_scale,
+                                                                  Titan.radius // math_base.planet_scale))
 
 
 def draw_UI(UI):
     UI.draw_background()
     UI.draw_buttons()
+

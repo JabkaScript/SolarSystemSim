@@ -4,25 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="734f22eb-bbe1-482e-96ff-24f23a0b97b1" name="Changes" comment="Пофиксил орбиты + вынес обработчик событий в отдельный файлик.&#10;Теперь главная проблема - интерфейс и лаги, да, лаги это страшно.">
+    <list default="true" id="734f22eb-bbe1-482e-96ff-24f23a0b97b1" name="Changes" comment="Дело с лагами сделано&#10;Орбиты теперь константы, обновил спрайты, музычка модная + всякие обработчки нажатий крутые новые">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buttons/info_button.png" beforeDir="false" afterPath="$PROJECT_DIR$/buttons/info_button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/button.py" beforeDir="false" afterPath="$PROJECT_DIR$/button.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drawning_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/drawning_methods.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/events_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/math_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/math_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planet_field.py" beforeDir="false" afterPath="$PROJECT_DIR$/planet_field.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/music_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/planet_info_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/planet_info_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planet_scale.py" beforeDir="false" afterPath="$PROJECT_DIR$/planet_scale.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planets/earth.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/earth.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planets/jupiter.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/jupiter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planets/mars.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/mars.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planets/mars_R.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/planets/mars_R.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planets/mercury.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/mercury.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planets/neptune.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/neptune.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planets/saturn.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/saturn.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planets/sun.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/sun.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planets/uranus.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/uranus.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planets/venus.png" beforeDir="false" afterPath="$PROJECT_DIR$/planets/venus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/satellites/phobos_R.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/satellites/phobos_R.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solar_system_object_information_ru.py" beforeDir="false" afterPath="$PROJECT_DIR$/solar_system_object_information_ru.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solar_system_stat.py" beforeDir="false" afterPath="$PROJECT_DIR$/solar_system_stat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/space_objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/space_objects.py" afterDir="false" />
@@ -43,6 +33,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -127,7 +118,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649003801316</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Дело с лагами сделано&#10;Орбиты теперь константы, обновил спрайты, музычка модная + всякие обработчки нажатий крутые новые">
+      <created>1650050675405</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650050675405</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Дело с лагами сделано&#10;Орбиты теперь константы, обновил спрайты, музычка модная + всякие обработчки нажатий крутые новые">
+      <created>1650050786765</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1650050786765</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +151,7 @@
     <MESSAGE value="1" />
     <MESSAGE value="2" />
     <MESSAGE value="Пофиксил орбиты + вынес обработчик событий в отдельный файлик.&#10;Теперь главная проблема - интерфейс и лаги, да, лаги это страшно." />
-    <option name="LAST_COMMIT_MESSAGE" value="Пофиксил орбиты + вынес обработчик событий в отдельный файлик.&#10;Теперь главная проблема - интерфейс и лаги, да, лаги это страшно." />
+    <MESSAGE value="Дело с лагами сделано&#10;Орбиты теперь константы, обновил спрайты, музычка модная + всякие обработчки нажатий крутые новые" />
+    <option name="LAST_COMMIT_MESSAGE" value="Дело с лагами сделано&#10;Орбиты теперь константы, обновил спрайты, музычка модная + всякие обработчки нажатий крутые новые" />
   </component>
 </project>

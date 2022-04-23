@@ -1,7 +1,5 @@
 import math
 
-import window_init
-
 AU = 149597870 * 1000
 G = 6.67428e-11
 orbit_scale = 0.000000006 #5.681818181818182e-09
@@ -74,13 +72,6 @@ def decrease_scale():
     if orbit_scale - 100 / AU > 1.002673796791444e-09:
         orbit_scale -= 100 / AU
         planet_scale += 50000
-
-
-def calculate_day_number(date):
-    days = int(date[0:1])
-    months = int(date[3:4])
-    years = int(date[6:len(date)])
-    return 367 * years - (7 * (years + ((months + 9) / 12))) // 4 + (275 * months) // 9 + days - 730530
 
 
 def move_satellites_to_parent(focus_object):

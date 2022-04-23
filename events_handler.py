@@ -1,6 +1,8 @@
 import pygame
 
+import drawning_methods
 import math_base
+import planet_info_window
 import solar_system_stat
 import window_init
 from pygame.locals import *
@@ -11,15 +13,17 @@ orbit_in_way = False
 
 def set_on_click_listener():
     global orbit_in_way, satellite_counter
-    focus_object = window_init.focus_object
+    focus_object = window_init.current_focus_object
     if satellite_counter > len(focus_object.satellite_array):
-        window_init.satellite_counter = 0
+        satellite_counter = 0
     for event in pygame.event.get():
         match event.type:
             case pygame.QUIT:
                 window_init.loop = False
             case pygame.MOUSEBUTTONDOWN:
                 match event.button:
+                    case 3:
+                        window_init.return_focus_object()
                     case 4:
                         window_init.SCALED = False
                         math_base.increase_scale()
@@ -61,6 +65,7 @@ def set_on_click_listener():
                             orbit_in_way = True
                         else:
                             orbit_in_way = False
+                            window_init.trackable_object = window_init.current_focus_object
                     case pygame.K_q:
                         if satellite_counter + 1 < len(focus_object.satellite_array):
                             satellite_counter += 1
@@ -76,8 +81,8 @@ def set_on_click_listener():
                             window_init.orbit_needed = False
                         else:
                             window_init.orbit_needed = True
-                    case pygame.K_l:
-                        print(window_init.user_location_x, window_init.user_location_y)
+                    case pygame.K_i:
+                        planet_info_window.init_and_draw(window_init.trackable_object)
 
     if pygame.key.get_pressed()[K_w]:
         math_base.clear_scaled_orbits(focus_object)

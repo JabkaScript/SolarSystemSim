@@ -1,9 +1,6 @@
 import pygame
 
 
-
-
-
 def play_background_music():
     pygame.mixer.music.load("sound/background_music.mp3")
     pygame.mixer.music.play(-1)

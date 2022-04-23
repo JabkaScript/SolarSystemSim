@@ -62,5 +62,33 @@ Phobos.real_image = "satellites/phobos_R.jpg"
 Phobos.info = solar_system_object_information_ru.phobos_info
 Mars.satellite_array.append(Phobos)
 
+Deimos = SpaceObject("Деймос", 234600*1000, 0, "red", 1.48 * 10 ** 15, 620000, "Спутник")
+Deimos.y_velocity = -1.35*1000
+Deimos.original_y_velocity = -1.35*1000
+Deimos.real_image = "satellites/deimos_R.jpg"
+Deimos.info = solar_system_object_information_ru.deimos_info
+Mars.satellite_array.append(Deimos)
+
+Io = SpaceObject("Ио", 421800*1000, 0, "yellow", 8.94*10**22, 3660000, "Спутник")
+Io.y_velocity = -17.34*1000
+Io.original_y_velocity = -17.34*1000
+Io.real_image = "satellites/io_R.jpg"
+Io.info = solar_system_object_information_ru.io_info
+Jupiter.satellite_array.append(Io)
+
+Europe = SpaceObject("Европа", 671100*1000, 0, "white", 4.8*10**22, 3138000, "Спутник")
+Europe.y_velocity = -13.74*1000
+Europe.original_y_velocity = -13.74*1000
+Europe.real_image = "satellites/europe_R.jpg"
+Europe.info = solar_system_object_information_ru.europe_info
+Jupiter.satellite_array.append(Europe)
+
+Titan = SpaceObject("Титан",1221000*1000, 0, "yellow", 1350*10**20, 2575000, "Спутник")
+Titan.y_velocity = -5.57*1000
+Titan.original_y_velocity = -5.57*1000
+Titan.real_image = "satellites/europe_R.jpg"
+Titan.info = solar_system_object_information_ru.europe_info
+Saturn.satellite_array.append(Titan)
+
 Sun.satellite_array = [Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune]
 OBJECT_ARRAY = [Sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune]

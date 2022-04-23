@@ -38,8 +38,8 @@ class SpaceObject:
 
     def draw_orbit(self, win):
         pygame.draw.circle(win, self.color, (
-            window_init.focus_object.x * math_base.orbit_scale + window_init.WIDTH / 2 + window_init.user_location_x,
-            window_init.focus_object.y * math_base.orbit_scale + window_init.HEIGHT / 2 + window_init.user_location_y),
+            window_init.current_focus_object.x * math_base.orbit_scale + window_init.WIDTH / 2 + window_init.user_location_x,
+            window_init.current_focus_object.y * math_base.orbit_scale + window_init.HEIGHT / 2 + window_init.user_location_y),
                            self.distance_to_parent * math_base.orbit_scale, 2)
 
     def draw_satellites(self, win):
