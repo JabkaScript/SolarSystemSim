@@ -27,9 +27,6 @@ music_handler.play_env_sounds()
 
 
 def start_program():
-    s = "ababa"\
-    "aboba"
-    print(s)
     global current_focus_object, loop, user_location_x, user_location_y, SCALED
     background_image = pygame.image.load("env/background.jpg")
     rect = background_image.get_rect()

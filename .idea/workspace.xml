@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="734f22eb-bbe1-482e-96ff-24f23a0b97b1" name="Changes" comment="Дело с лагами сделано&#10;Орбиты теперь константы, обновил спрайты, музычка модная + всякие обработчки нажатий крутые новые">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/button.py" beforeDir="false" afterPath="$PROJECT_DIR$/button.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drawning_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/drawning_methods.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/events_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/math_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/music_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planet_info_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/planet_info_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/satellites/phobos_R.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/satellites/phobos_R.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solar_system_object_information_ru.py" beforeDir="false" afterPath="$PROJECT_DIR$/solar_system_object_information_ru.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solar_system_stat.py" beforeDir="false" afterPath="$PROJECT_DIR$/solar_system_stat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/space_objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/space_objects.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface.py" afterDir="false" />
+    <list default="true" id="734f22eb-bbe1-482e-96ff-24f23a0b97b1" name="Changes" comment="Пофиксил парочку багов+2 спутника">
       <change beforePath="$PROJECT_DIR$/window_init.py" beforeDir="false" afterPath="$PROJECT_DIR$/window_init.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650050786765</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Пофиксил парочку багов+2 спутника">
+      <created>1650688108005</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1650688108005</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +147,7 @@
     <MESSAGE value="2" />
     <MESSAGE value="Пофиксил орбиты + вынес обработчик событий в отдельный файлик.&#10;Теперь главная проблема - интерфейс и лаги, да, лаги это страшно." />
     <MESSAGE value="Дело с лагами сделано&#10;Орбиты теперь константы, обновил спрайты, музычка модная + всякие обработчки нажатий крутые новые" />
-    <option name="LAST_COMMIT_MESSAGE" value="Дело с лагами сделано&#10;Орбиты теперь константы, обновил спрайты, музычка модная + всякие обработчки нажатий крутые новые" />
+    <MESSAGE value="Пофиксил парочку багов+2 спутника" />
+    <option name="LAST_COMMIT_MESSAGE" value="Пофиксил парочку багов+2 спутника" />
   </component>
 </project>
